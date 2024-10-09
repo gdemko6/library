@@ -31,6 +31,20 @@ function Book(title, author, pages, rating) {
         rating.setAttribute("id", "card-rating");
         rating.innerText = "Rating: " + this.rating;
         card.appendChild(rating);
+
+        let deleteButton = document.createElement('button');
+        
+        deleteButton.innerText = "X";
+        deleteButton.classList.add("delete-button");
+        card.appendChild(deleteButton);
+
+        deleteButton.addEventListener("click", () => {
+            card.remove(); 
+            const index = myLibrary.indexOf(this); 
+            if (index > -1) {
+                myLibrary.splice(index, 1);  
+            }
+        });
     }
 }
 
