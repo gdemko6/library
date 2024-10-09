@@ -1,19 +1,36 @@
 const myLibrary = [];
 
-function Book(title) {
+function Book(title, author, pages, rating) {
     this.title = title;
+    this.author = author;
+    this.pages = pages;
+    this.rating = rating;
 
     this.printBooks = function(){
-        myLibrary.forEach(book => {
-            let card = document.createElement('div');
-            card.classList.add("card");
-            document.querySelector('main').appendChild(card);
-            
-            let cardTitle = document.createElement('div');
-            cardTitle.setAttribute("id", "card-title");
-            cardTitle.innerText = book.title;
-            card.appendChild(cardTitle);
-        });
+
+        let card = document.createElement('div');
+        card.classList.add("card");
+        document.querySelector('main').appendChild(card);
+        
+        let cardTitle = document.createElement('div');
+        cardTitle.setAttribute("id", "card-title");
+        cardTitle.innerText = this.title;
+        card.appendChild(cardTitle);
+
+        let author = document.createElement('div');
+        author.setAttribute("id", "card-author");
+        author.innerText = "Author: " +this.author;
+        card.appendChild(author);
+
+        let pages = document.createElement('div');
+        pages.setAttribute("id", "card-pages");
+        pages.innerText = "Page Count: " +this.pages;
+        card.appendChild(pages);
+
+        let rating = document.createElement('div');
+        rating.setAttribute("id", "card-rating");
+        rating.innerText = "Rating: " + this.rating;
+        card.appendChild(rating);
     }
 }
 
@@ -21,15 +38,30 @@ function addBookToLibrary(book) {
     myLibrary.push(book);
 }
 
-const harryPotter = new Book("Harry Potter");
-addBookToLibrary(harryPotter);
+//making button open dialog
+const modal = document.querySelector('#add-modal');
+const addBookButton = document.querySelector('#add-button');
 
-const lotr = new Book("Lord of the Rings");
-addBookToLibrary(lotr);
+addBookButton.addEventListener("click", () => {
+    modal.showModal();
+})
 
-const maze = new Book("Maze Runner");
-addBookToLibrary(maze);
+//these are the buttons inside the modal
+const addButton = document.querySelector('#add-button-modal');
+const closeButton = document.querySelector('#close-button');
 
-const mazes = new Book("Maze Runner");
-addBookToLibrary(mazes);
-harryPotter.printBooks();
+closeButton.addEventListener("click", () => {
+    modal.close();
+})
+
+addButton.addEventListener("click", () => {
+    const title = document.querySelector("#title").value;
+    const author = document.querySelector("#author").value;
+    const pages = document.querySelector('#pages').value;
+    const rating = document.querySelector('#rating').value;
+    const newBook = new Book(title, author, pages, rating);
+    myLibrary.push(newBook);
+    newBook.printBooks();
+    modal.close();
+})
+

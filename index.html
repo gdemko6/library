@@ -10,8 +10,31 @@
 <body>
     <header>
         My Virtual Library
-        <br><button id="remove-button">Remove Book</button>
+        <br>
         <button id="add-button">Add Book</button>
+
+        <dialog id="add-modal">
+            <h3>New Book</h3>
+            <button id="close-button">X</button>
+            <div>
+                <label for="title">Book Title</label>
+                <input name="title" type="text" id="title" placeholder="Enter text here...">
+            </div><br>
+            <div>
+                <label for="author">Author</label>
+                <input name="author" type="text" id="author" placeholder="Enter text here...">
+            </div><br>
+            <div>
+                <label for="pages">Page Count</label>
+                <input name="pages" type="text" id="pages" placeholder="Enter text here...">
+            </div><br>
+            <div>
+                <label for="rating">Rating 1-5</label>
+                <input name="rating" type="text" id="rating" placeholder="Enter text here...">
+            </div>
+            <button id="add-button-modal">Add</button>
+            
+        </dialog>
     </header>
     <main>
         

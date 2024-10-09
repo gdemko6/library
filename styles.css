@@ -37,6 +37,7 @@ header {
     }
     #add-button:hover {
         background-color: #237bb1;
+        color: lightgray;
     }
     #remove-button {
         background-color: #d11a2a;
@@ -46,11 +47,63 @@ header {
     }
 }
 
+#add-modal {
+    width: 30%;
+    height: 400px;
+    font-size: 22px;
+    justify-content: left;
+    border: none;
+    border-radius: 8px;
+    position: relative;
+    
+    
+    input {
+        margin-bottom: 5px;
+        height: 28px;
+        border-radius: 10px;
+        border: .5px solid black;
+        padding-left: 10px;
+    }
+    label {
+        margin-left: 0;
+        margin-right: 5px;
+        padding: 0;
+    }
+    #close-button {
+        position: absolute;
+        right: 10px;
+        top: 10px;
+        border-radius: 25px;
+        width: 40px;
+        height: 40px;
+        margin: 0;
+        font-size: 24px;
+        padding: 0;
+        text-align: center;
+        background-color: darkgray;
+    }
+    div {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    #add-button-modal {
+        background-color: #24a0ed;
+        margin-top: 30px;
+    }
+    #add-button-modal:hover {
+        background-color: #237bb1;
+        color: lightgray;
+    }
+    
+}
+
+
 main {
     background-color: black;
     flex: 1;
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
     gap: 25px;
     padding: 10px 15px;
     grid-auto-rows: 150px;
