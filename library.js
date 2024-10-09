@@ -23,4 +23,13 @@ function addBookToLibrary(book) {
 
 const harryPotter = new Book("Harry Potter");
 addBookToLibrary(harryPotter);
+
+const lotr = new Book("Lord of the Rings");
+addBookToLibrary(lotr);
+
+const maze = new Book("Maze Runner");
+addBookToLibrary(maze);
+
+const mazes = new Book("Maze Runner");
+addBookToLibrary(mazes);
 harryPotter.printBooks();
