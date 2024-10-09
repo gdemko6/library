@@ -1,0 +1,28 @@
+html, body {
+   margin: 0;
+   padding: 0;
+   height: 100%;
+}
+
+body {
+    display: flex;
+    flex-direction: column;
+    
+}
+
+header {
+    font-size: 48px;
+    text-align: center;
+    background-color: lightgray;
+    padding: 25px 0;
+    
+}
+
+main {
+    background-color: black;
+    flex: 1;
+}
+
+.card {
+    color: white;
+}
